@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Works</p>
+
+    <a href="https://github.com/nightscriptor/mvcMovie" target="_blank" rel="noopener noreferrer"
+       aria-label="Otwórz profil GitHub" class="d-inline-block">
+        <svg viewBox="-100 -100 200 200" width="200" height="200" role="img" aria-label="Obracająca się gwiazda">
+            <defs>
+                <polygon id="arm" points="0,-90 16,-22 0,0 -16,-22" fill="var(--bs-primary)" />
+            </defs>
+            <g id="star">
+                <use href="#arm" transform="rotate(0)" />
+                <use href="#arm" transform="rotate(120)" />
+                <use href="#arm" transform="rotate(240)" />
+            </g>
+        </svg>
+    </a>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        gsap.to("#star", {
+            rotation: 360,
+            svgOrigin: "0 0",
+            duration: 6,
+            ease: "none",
+            repeat: -1
+        });
+    </script>
+}
